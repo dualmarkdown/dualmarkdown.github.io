@@ -12,7 +12,7 @@ sitemap:
 
 ## Installation requirements
 
-* LaTeX (distribution)[https://www.latex-project.org/get/#tex-distributions] (for PDF output with pandoc)
+* LaTeX [distribution](https://www.latex-project.org/get/#tex-distributions) (for PDF output with pandoc)
 
 * [pandoc v1.19.x](https://github.com/jgm/pandoc/releases/tag/1.19.2.1)
 
