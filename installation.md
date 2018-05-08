@@ -8,48 +8,32 @@ sitemap:
     changefreq: weekly
 ---
 
+
+
 ## Installation requirements
-
-* [pandoc v1.19.x](https://github.com/jgm/pandoc/releases/tag/1.19.2.1)
-
-* Python v2.7
-
-* pip for Python v2.7
-	- On Mac OS X, it typically comes installed with your Python distribution.
-	- On Windows, make sure you choose to install `pip` during the installation of Python (latest Python installers provide such an option).
-	- On a Debian-based system (including Ubuntu), you can install `pip` (as root) as follows:
-
-			apt-get install python-pip
 
 * LaTeX distribution (for PDF output with pandoc)
 
-* [panflute](https://github.com/sergiocorreia/panflute) Python library
-	- Note that it gets installed automatically with `pip` when installing the Dual Markdown Framework
+* [pandoc v1.19.x](https://github.com/jgm/pandoc/releases/tag/1.19.2.1)
 
-* [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref) (use the OS-specific tarball found [here](https://github.com/lierdakil/pandoc-crossref/releases/tag/v0.2.6.0))
-	- Simply copy the executable file in the same folder where the pandoc executable file was installed 
+* [panflute](https://github.com/sergiocorreia/panflute)
 
-* [Panbuild](https://github.com/jcsaezal/panbuild), a make-like builder for Pandoc
- 	- Installation: `pip install git+https://github.com/jcsaezal/panbuild`
+* [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref)
+
+* [Panbuild](https://github.com/jcsaezal/panbuild)
 
 * A text editor to edit Markdown files
 	- [Sublime Text 3](https://www.sublimetext.com/3) is possibly the best multi-platform editor for this. A [plugin to use Panbuild from Sublime Text](https://github.com/jcsaezal/SublimeText-Panbuild) is now available.
 
 ## Installation
 
-Currently, the easiest way to install the Dual Markdown Framework is by using `pip` as follows:
+Currently, the easiest way to install the Dual Markdown Framework is by using `pip`. The python package manager tool can be installed either running a python [script](https://pip.pypa.io/en/stable/installing/) or with the following command:
 
-	pip install git+https://github.com/dacya/pimcd1718-jcsaezal
+	apt-get install python-pip
 
-Because the repository is currently a private one, you should have your git environment properly configured on your machine in order for pip to be able to download it. This requirement will be removed eventually as the repository will be publicly available soon.
+	pip install git+https://github.com/dacya/dualmarkdown/dualmarkdown
 
-In the meantime, if the one-command installation shown above does not work (e.g., git is not installed on your system) you can follow this two-step  process:
-
-1. Download a copy of the repository in [ZIP format](https://github.com/dacya/pimcd1718-jcsaezal/archive/master.zip) and extract it on your computer.
-
-2. Install the Dual Markdown Framework on your system by running `pip` as follows:
-
-		pip install <path_to_your_local_copy_of_repository>
+More specific installation instructions can be found in the (official github repository)[https://github.com/dualmarkdown/dualmarkdown].
 
 ## Mac OS X installation notes
 
@@ -61,4 +45,9 @@ _Tests have been performed but no specific installation notes are provided since
 
 ## Linux installation notes
 
-_Tests have been performed but no specific installation notes are provided since no issues became apparent so far._
+In order to build some slide templates on a Linux system you may need to have the Calibri font downloaded and installed in the ~/.fonts directory. You can do it with the following commands:
+```
+sudo apt-get install cabextract
+mkdir ~/.fonts
+wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
+```
