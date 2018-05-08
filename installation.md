@@ -27,9 +27,7 @@ sitemap:
 
 ## Installation
 
-Currently, the easiest way to install the Dual Markdown Framework is by using `pip`. The python package manager tool can be installed either running a python [script](https://pip.pypa.io/en/stable/installing/) or with the following command:
-
-	apt-get install python-pip
+Currently, the easiest way to install the Dual Markdown Framework is by using `pip`. The python package manager tool can be installed either running a python [script](https://pip.pypa.io/en/stable/installing/) or with the following command	`apt-get install python-pip`
 
 	pip install git+https://github.com/dacya/dualmarkdown/dualmarkdown
 
