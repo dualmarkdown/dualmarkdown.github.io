@@ -4,7 +4,7 @@ bio:                'Project to create dual-language teaching content'
 description:        "Project to create dual-language teaching content"
 locale:             en_US
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://dualmarkdown.org" # the base hostname & protocol for your site
+url: "" # the base hostname & protocol for your site
 
 defaults:
 - scope:
