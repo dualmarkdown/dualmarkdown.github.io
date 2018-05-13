@@ -10,10 +10,8 @@ sitemap:
 
 ## Getting started
 
-This open source project facilitates the creation of teaching content in multiple languages by editing a single markdown file. Devoloping this project entailed creating different extensions for existing frameworks and programs, that were released in github as independent tools.
+We are currently preparing a set of examples that illustrate how to create Dual Markdown documents and how to automatically generate a variety of output documents (PDF, docx, HTML, EPUB, etc.) from them by using [Panbuild](https://github.com/jcsaezal/panbuild/blob/master/README.md) and the [Sublime Text](https://www.sublimetext.com/) editor.
 
-The main components of this project are the following:
+<img src="../images/outline.png" style="display: block;margin-left: auto;margin-right: auto;" width="78%" /> 
 
-* **[Dual Markdown](https://github.com/dualmarkdown/dualmarkdown)**: This repository contains the main extensions and filters created for Pandoc Markdown.
-* **[Panbuild](https://github.com/jcsaezal/panbuild)**: Panbuild is a make-like builder for pandoc. It is a command-line tool that aims to simplify the construction of multiple output documents (in different formats, such as PDF, DOCX, EPUB, etc.) from a given source document (e.g. one or several Markdown files).
-* **[Panbuild-Sublime](https://github.com/jcsaezal/SublimeText-Panbuild)**: This plugin makes it possible to use panbuild --a make-like builder for pandoc-- within the Sublime Text editor. Essentially, the plugin removes the need to type panbuild or pandoc commands from a terminal window; all the interaction with panbuild and pandoc takes place from the graphical user interface of Sublime Text.
+<!--style="display: block;margin-left: auto;margin-right: auto;" width="78%" />!-->

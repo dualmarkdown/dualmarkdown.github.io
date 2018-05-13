@@ -8,44 +8,28 @@ sitemap:
     changefreq: weekly
 ---
 
-
-
-## Installation requirements
-
-* LaTeX [distribution](https://www.latex-project.org/get/#tex-distributions) (for PDF output with pandoc)
-
-* [pandoc v1.19.x](https://github.com/jgm/pandoc/releases/tag/1.19.2.1)
-
-* [panflute](https://github.com/sergiocorreia/panflute)
-
-* [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref)
-
-* [Panbuild](https://github.com/jcsaezal/panbuild)
-
-* A text editor to edit Markdown files
-	- [Sublime Text 3](https://www.sublimetext.com/3) is possibly the best multi-platform editor for this. A [plugin to use Panbuild from Sublime Text](https://github.com/jcsaezal/SublimeText-Panbuild) is now available.
-
 ## Installation
 
-Currently, the easiest way to install the Dual Markdown Framework is by using `pip`. The python package manager tool can be installed either running a python [script](https://pip.pypa.io/en/stable/installing/) or with the following command	`apt-get install python-pip`
+### Using official installers
 
-	pip install git+https://github.com/dacya/dualmarkdown/dualmarkdown
+We are currently developing installers for Windows and Mac OS X. These installers will make it possible to automatically deploy on your system the various components of the Dual Markdown as well as the following dependencies:
 
-More specific installation instructions can be found in the (official github repository)[https://github.com/dualmarkdown/dualmarkdown].
+* [pandoc v1.19.x](https://github.com/jgm/pandoc/releases/tag/1.19.2.1)
+* [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref)
+* [Sublime Text 3](https://www.sublimetext.com/3)
+* [A LaTeX distribution](https://www.latex-project.org/get/#tex-distributions) (for PDF output with pandoc)
 
-## Mac OS X installation notes
+The installers will be available shortly. In the meantime, users will have to resort to the [manual installation procedure](#manual-installation).
 
-As for PDF output (LaTeX based), the Dual Markdown framework has been successfully tested with MacTex 2016 or Later. MacTeX versions earlier than 2013 are unreliable mostly due to outdated version of the `longtable` LaTeX package, which leads to build error when generating some PDF documents with `pandoc`. 	
+### Manual installation
 
-## Windows installation notes
+The Dual Markdown framework relies on free multi-platform tools available for Windows, Mac OS X or Linux. To install the framework on your system just install the dependencies listed above, as well as the following three components that make up the framework, which are available on GitHub:   
 
-_Tests have been performed but no specific installation notes are provided since no issues became apparent so far._
+1. **[Dual Markdown filters](https://github.com/dualmarkdown/dualmarkdown)**: A set of [pandoc filters](https://pandoc.org/filters.html) that extend Pandoc's Markdown with syntax for Dual Markdown files (i.e. documents in two languages) and with other constructions specifically designed to facilitate the creation of teaching materials. More information on these Markdown extensions can be found [here](/documentation).
+2. **[Panbuild](https://github.com/jcsaezal/panbuild)**: Panbuild is a make-like builder for [pandoc](www.pandoc.org). It is a command-line tool that aims to simplify the construction of multiple output documents (in different formats, such as PDF, DOCX, EPUB, etc.) from a given source document (e.g. one or several Markdown files).
+3. **[Panbuild plugin for Sublime Text](https://github.com/jcsaezal/SublimeText-Panbuild)**: This plugin makes it possible to use Panbuild seamlessly within the Sublime Text editor. <!--Essentially, the plugin removes the need to type panbuild or pandoc commands from a terminal window; all the interaction with panbuild and pandoc takes place from the graphical user interface of Sublime Text.-->
 
-## Linux installation notes
-
-In order to build some slide templates on a Linux system you may need to have the Calibri font downloaded and installed in the ~/.fonts directory. You can do it with the following commands:
-```
-sudo apt-get install cabextract
-mkdir ~/.fonts
-wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
-```
+Note that the installation instructions for each component can be found on the associated GitHub repository page:
+- [Installation of Dual Markdown filters](https://github.com/jcsaezal/panbuild/blob/master/README.md)
+- [Installation of Panbuild](https://github.com/jcsaezal/panbuild/blob/master/README.md)
+- [Installation Panbuild plugin](https://github.com/jcsaezal/SublimeText-Panbuild/blob/master/README.md)

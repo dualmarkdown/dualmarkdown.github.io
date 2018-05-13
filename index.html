@@ -28,7 +28,7 @@ sitemap:
 				<!-- Intro -->
 					<div id="intro">
 						<h1>Dual markdown</h1>
-						<p>This open source project facilitates the creation of teaching content in multiple languages by editing a single markdown file</p>
+						<p>This framework facilitates the creation of teaching materials in multiple languages by using Markdown</p>
 						<ul class="actions">
 							<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
@@ -58,71 +58,15 @@ sitemap:
 							<article class="post featured">
 								
 								<header class="major">
-									<p>This open source project facilitates the creation of teaching content in multiple languages by editing a single markdown file. Developing this project entailed creating different extensions for existing frameworks and programs, that were released in github as independent tools. </p>
+									<p>This framework facilitates the creation of teaching materials in multiple languages with Markdown. The framework consists of multiple open-source tools, which are available on <a href="https://github.com/dualmarkdown/dualmarkdown">GitHub.</a> </p>
 								</header>
-								<img src="images/outline.png"/>
-
-								<!--<p>The core of the project lies in the extensions and filters created for pandoc markdown, that can be easily used from the command line. However, we distribute a more user-friendly method to create dual-language material from Sublime Text, a popular text editor which functionality can be easily extended with plugins by means of keyboard short-cuts and context menus. </p>
-								<p>This is a screenshot of the context menu that pops out after pressing Ctrl-b in Sublime 3 if the dualmarkdown plugin is installed. You could type or select either option to generate content in different formats and languages. Note that the default options will vary depending on the project configuration, specified in a text file ending with the format .yaml)</p>
-								<img src="images/example-formats.png"/>
-
-								<p>This is the context menu that you would have to launch in order to manually select the different build alternatives previously shown in MAC OSX.</p>
-								<img src="images/select-panbuild.png"/>
-								-->
-								<!--
-								<p> The main components of this project are the following.</p>
-								
-								<p><b><a href="https://github.com/dacya/dualmarkdown/dualmarkdown"> Dual Markdown</a></b>: This private (for now) repository contains the main extensions and filters created for Pandoc Markdown to implement the project functionality.</p>
-								<p><b><a href="https://github.com/jcsaezal/panbuild"> Panbuild</a></b>: Panbuild is a make-like builder for pandoc. It is a command-line tool that aims to simplify the construction of multiple output documents (in different formats, such as PDF, DOCX, EPUB, etc.) from a given source document (e.g. one or several Markdown files).</p>
-								<p><b><a href="https://github.com/jcsaezal/SublimeText-Panbuild"> SublimeText-Panbuild</a></b>: This plugin makes it possible to use panbuild --a make-like builder for pandoc-- within the Sublime Text editor. Essentially, the plugin removes the need to type panbuild or pandoc commands from a terminal window; all the interaction with panbuild and pandoc takes place from the graphical user interface of Sublime Text.</p>
-							-->
+								<img src="images/outline.png" width="78%" />
 							</article>
-
-						<!-- Posts -->
-						<!--
-							<section class="posts">
-                {% for post in site.posts limit:3 %}
-                {% assign mod3 = forloop.index | modulo: 3 %}
-  								<article>
-  									<header>
-  										<span class="date">{{ post.date | date_to_string }}</span>
-  										<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
-  									</header>
-  									<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>
-  									<p>{{ post.excerpt }}</p>
-  									<ul class="actions">
-  										<li><a href="{{ post.url | absolute_url }}" class="button">Full Story</a></li>
-  									</ul>
-  								</article>
-                  {% if mod3 == 0 %}
-                  <article>
-  									<header>
-  										<h2><a href="#">Sponsored</a></h2>
-  									</header>
-
-  								</article>
-                  {% endif %}
-                {% endfor %}
-
-							</section>
-					-->
-						<!-- Footer -->
-							<!--<footer>
-                <ul class="actions">
-                  <li><a href="{{ "/blog/" | absolute_url }}" class="button">Our Blog</a></li>
-                </ul>
-							</footer>-->
-
 					</div>
 
-				<!-- Footer -->
-       <!-- {% include foot.html %}-->
-
 			</div>
-
 		<!-- Scripts -->
 		{% include scripts-main.html %}
-    {% include tracking.html %}
-
+    	{% include tracking.html %}
 	</body>
 </html>
