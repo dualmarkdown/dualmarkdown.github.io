@@ -10,8 +10,6 @@ sitemap:
 
 ## Getting started
 
-We are currently preparing a set of examples that illustrate how to create Dual Markdown documents and how to automatically generate a variety of output documents (PDF, docx, HTML, EPUB, etc.) from them by using [Panbuild](https://github.com/jcsaezal/panbuild/blob/master/README.md) and the [Sublime Text](https://www.sublimetext.com/) editor.
+We are currently preparing a set of examples that illustrate how to create Dual Markdown documents and how to automatically generate a variety of output documents (PDF, docx, HTML, EPUB, etc.) from them by using [Panbuild](https://github.com/jcsaezal/panbuild/blob/master/README.md) and the [Sublime Text](https://www.sublimetext.com/) editor. 
 
-<img src="../images/outline.png" style="display: block;margin-left: auto;margin-right: auto;" width="78%" /> 
-
-<!--style="display: block;margin-left: auto;margin-right: auto;" width="78%" />!-->
+![](../images/scr2.png)
