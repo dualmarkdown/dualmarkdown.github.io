@@ -67,24 +67,25 @@ Note that the two languages in a dual Markdown document have a _tag_ associated 
 
 When invoking `pandoc` to generate an output file from a dual Markdown document, just one of the two languages will be enabled. Unless explicitly noted, L1 --whose tag is defined in the `lang1` variable-- is the one enabled. To enable any specific language, the `lang_enabled` variable must be defined by assigning it the desired language's tag (e.g. `lang_enabled=EN` for English). 
 
-The table below summarizes the language extensions for the creation of dual documents. These extensions are implemented in the  [`dual_md.py`](https://github.com/dacya/pimcd1718-jcsaezal/blob/master/common/dual_md.py) pandoc filter.  
+The table below summarizes the language extensions for the creation of dual documents. These extensions are implemented in the  [`dual_md.py`](https://github.com/dualmarkdown/dualmarkdown/blob/master/dualmarkdown/dual_md.py) pandoc filter.  
 
 
-|                       Extension                        | Supported output formats |               Example                |
-| :----------------------------------------------------- | :----------------------: | :----------------------------------- |
-| [Language-specific blocks](#lang-blocks)               |           All            | All                                  |
-| [Dual spans](#dual-spans)                              |           All            | All                                  |
-| [Dual titles](#dual-titles)                            |           All            | Slides and lab_assignment1.md        |
-| [Dual inline table cells](#dual-tables)                |           All            | exercises_file_systems.md            |
-| [Dual images](#dual-images)                            |           All            | Slides and exercises_file_systems.md |
-| [Inclusion of Tikz diagrams as figures](#include-tikz) |       Latex-based        | Slides and exercises_file_systems.md |
-| [Dual Tikz diagrams](#dual-tikz)                       |       Latex-based        | Slides and exercises_file_systems.md |
-| [Dual Pandoc variables](#dual-vars)                    |           All            | Slides (files.md)                    |
-| [Dual pandoc-crossref](#dual-crossref)                 |           All            | lab_assignment1.md                   |
+| Extension                                                                       | Supported output formats |
+| :-----------------------------------------------------                          | :----------------------: |
+| [Language-specific blocks](#language-specific-blocks)                           | All                      |
+| [Dual spans](#dual-spans)                                                       | All                      |
+| [Dual titles](#dual-titles)                                                     | All                      |
+| [Dual inline table cells](#dual-inline-table-cells)                             | All                      |
+| [Dual images](#dual-images)                                                     | All                      |
+| [Inclusion of Tikz diagrams as figures](#inclusion-of-tikz-diagrams-as-figures) | Latex-based              |
+| [Dual Tikz diagrams](#dual-tikz-diagrams)                                       | Latex-based              |
+| [Dual Pandoc variables](#dual-pandoc-variables)                                 | All                      |
+| [Dual pandoc-crossref](#dual-pandoc-crossref)                                   | All                      |
 
 
 
-## Language-specific blocks {#lang-blocks .unnumbered}     
+
+## Language-specific blocks    
 
 This extension allows the user to specify Markdown blocks associated with L1 or L2. When the final document is generated, the block in question will be only displayed if the corresponding language is selected.
 
@@ -124,7 +125,7 @@ Days of the week:
 END-EN
 ```
 
-## Dual spans {#dual-spans .unnumbered}     
+## Dual spans    
 
 Dual spans make it possible to provide the "dual version" of an inline Markdown text: one for L1 and another for L2. As it happens for Language-specific blocks, the final document will only display the version of the inline text that corresponds to the language enabled when invoking `pandoc`.
 
@@ -147,7 +148,7 @@ _Example_:
 [Módulo 2: Sistemas de Ficheros ||| Unit 2: File Systems]{.dual}
 ```
 
-## Dual titles {#dual-titles .unnumbered}     
+## Dual titles   
 
 Dual spans can be used in header titles as in the following example, which uses a level 3 header:
 
@@ -167,7 +168,7 @@ The `";;;"` string can be also used as a separator instead of `"|||"`:
 ### Título de sección ;;; Section title
 ```
               
-## Dual inline table cells {#dual-tables .unnumbered}     
+## Dual inline table cells   
 
 Dual inline table cells constitutes a less verbose version of the dual span syntax just for table cells that are made up of an inline Markdown element. Note that inline table cells are typically present in table header cells, as in the following example:
 
@@ -185,7 +186,7 @@ _Example:_
 
 In the example, a dual version of the table header is provided by employing dual inline table cells. Note that only the `";;;"` separator is allowed here to avoid syntactic ambiguity in the context of Pandoc's Markdown pipe tables.    
        
-## Dual images {#dual-images .unnumbered}     
+## Dual images    
 
 This extension constitutes a simple way of including the language-specific version of an image (e.g. English or Spanish version) in the final document with a single line of Markdown code. To use this feature, two versions of the figure (for L1 and L2) should be provided. Moreover, the figure file names must include the language tag, which will be omitted when using a dual image inclusion statement.
 
@@ -201,14 +202,14 @@ As is evident, it is just like a regular image inclusion statement (without a ca
 ```   
 
             
-## Inclusion of Tikz diagrams as figures {#include-tikz .unnumbered}     
+## Inclusion of Tikz diagrams as figures     
 
 Pandoc's Markdown does not support the inclusion of figures created with the Tikz LaTeX package. Thanks to this new feature, figures with the `".tex"` extension will be treated as a Tikz figure and included appropriately in the final document, which must be PDF, LaTeX or Beamer. If the `standalone` class is specified in the image inclusion statement, the Dual Markdown parser will include the figure in the final document by using the `\includestandalone{...}` macro. Otherwise, the image will be included with a regular Latex `\input{...}` statement. 
 
 It is also worth noting that this Markdown extension can be used along with the Dual image feature presented above.
 
 
-## Dual Tikz diagrams {#dual-tikz .unnumbered}     
+## Dual Tikz diagrams    
 
 One interesting feature of the Dual Markdown framework is the ability to create _Dual Tikz diagrams_. Such a diagram is a Tikz figure that provides the translation (in L1 and L2) for each text snippet that appears in the figure. In other words, Dual Tikz diagrams constitute a way of defining two versions of the same diagram (for L1 and for L2) in a single file. These kind of diagrams must be created by using the `\dtext` built-in macro, which is automatically defined when processing a Dual Markdown file. This macro accepts two mandatory arguments: the first one is the version of the text in L1, the second one corresponds to the translation of the text in L2. 
 
@@ -221,7 +222,7 @@ When generating the final document for L1, it will display `"Texto en español"`
 
 
 
-## Dual Pandoc variables {#dual-vars .unnumbered}
+## Dual Pandoc variables
 
 Pandoc's Markdown enables the user to define some parts of the document, such as the title, subtitle or date, by means of variables passed as arguments on the command-line (-M option) or via YAML code snippets in Markdown files. Because the title and the subtitle of a document will likely be different in L1 and L2, it makes sense to define the corresponding variables differently based on the language enabled in the target document. To make this possible, Dual Mardown introduces a simple syntax enabling to define the two variants of the title and subtitle (for L1 and L2, respectively), by using the `"|||"` or `";;;"` separators, as in Dual titles.
 
@@ -234,7 +235,7 @@ subtitle: "Mi subtítulo ||| My subtitle"
 ...
 ```
 
-## Dual pandoc-crossref {#dual-crossref .unnumbered}     
+## Dual pandoc-crossref 
 
 The [`pandoc-crossref` filter](https://github.com/lierdakil/pandoc-crossref) augments Pandoc's Markdown with statements for referencing images, equations and tables. This filter also enables the user to control how references and captions for the various elements are rendered in the final document. Customizing this aspect comes down to defining various pandoc variables (check out [this link](https://github.com/lierdakil/pandoc-crossref#customization) for details). For example, the `figureTitle` and `figPrefix` variables of `pandoc-crossref` allow us to define the label associated with image captions and image references, respectively. The default values for these variables are "Figure" and "fig." respectively.
 
@@ -252,47 +253,26 @@ The Dual Markdown parser takes care of selecting the "right" value for the diffe
 
 # Teaching extensions
 
-The table below summarizes the Teaching Markdown extensions, which are implemented in the [`teaching_md.py`](https://github.com/dacya/pimcd1718-jcsaezal/blob/master/common/teaching_md.py) pandoc filter.   
+The table below summarizes the Teaching Markdown extensions, which are implemented in the [`teaching_md.py`](https://github.com/dualmarkdown/dualmarkdown/blob/master/dualmarkdown/teaching_md.py) pandoc filter.   
 
 
-|                            Extension                            | Supported output formats |                Example                |
-| :-------------------------------------------------------------- | :----------------------: | :-----------------------------------: |
-| [Multiformat images](#multiformat)                              |           All            |       exercises_file_systems.md       |
-| [Latex blocks including Markdown](#latex-blocks)                |       Latex-based        |    DualSlides/FileSystems/files.md    |
-| [Traditional Latex tables (no syntax extension)](#latex-tables) |       Latex-based        | Any document with tables (PDF output) |
-| [Shaded and Framed blocks](#shaded-framed)                      |   HTML and Latex-based   |           lab_assignment1.md          |
-| [Exercise delimiter and auto-numbering](#exercises)             |           All            |       exercises_file_systems.md       |
-| [Multiple columns](#columns)                                    |  HTML, Latex and Docx*   |  Slides and exercises_file_systems.md |
-| [Pagebreaks](#pagebreaks)                                       |   HTML, Latex and Docx   |           `## {.pagebreak}`           |
-| [Custom spans (underline, alert, color)](#custom-spans)         |  HTML, Latex and Docx*   |                 Slides                |
-| [Custom (Latex-style) fontsizes in Divs and Spans](#fontsize)   |   HTML and Latex-based   |     Slides and lab_assignment1.md     |
-| [Block and figure alignment syntax](#alignment)                 |   HTML and Latex-based   |  Slides and exercises_file_systems.md |
-| [Advanced beamer blocks](#beamer-blocks)                        |          Beamer          |                 Slides                |
-| [Beamer transitions](#beamer-transitions)                       |          Beamer          |  None (Use spans with attribute only) |
+| Extension                                                                                           | Supported output formats |
+| :--------------------------------------------------------------                                     | :----------------------: |
+| [Multiformat images](#multiformat-images)                                                           | All                      |
+| [Latex blocks including Markdown](#latex-blocks-including-markdown)                                 | Latex-based              |
+| [Traditional Latex tables (no syntax extension)](#traditional-latex-tables-no-syntax-extension)     | Latex-based              |
+| [Shaded and Framed blocks](#shaded-and-framed-blocks)                                               | HTML and Latex-based     |
+| [Exercise delimiter and auto-numbering](#exercise-delimiter-and-auto-numbering)                     | All                      |
+| [Multiple columns](#multiple-columns)                                                               | HTML, Latex and Docx*    |
+| [Pagebreaks](#pagebreaks)                                                                           | HTML, Latex and Docx     |
+| [Custom spans (underline, alert, color)](#custom-spans-underline-alert-color)                       | HTML, Latex and Docx*    |
+| [Custom (Latex-style) fontsizes in Divs and Spans](#custom-latex-style-fontsizes-in-divs-and-spans) | HTML and Latex-based     |
+| [Block and figure alignment syntax](#block-and-figure-alignment-syntax)                             | HTML and Latex-based     |
+| [Advanced beamer blocks](#advanced-beamer-blocks)                                                   | Beamer                   |
+| [Beamer transitions](#beamer-transitions)                                                           | Beamer                   |
 
 
-<!--
-
-|                            Extension                            | Supported output formats |                Example                |
-| :-------------------------------------------------------------: | :----------------------: | :-----------------------------------: |
-|              [Multiformat images (alt-ext attribute)             |           All            |       exercises_file_systems.md       |
-|        [Latex blocks including Markdown (\\lbegin \\lend)        |       Latex-based        |    DualSlides/FileSystems/files.md    |
-|          [Traditional Latex tables (no syntax extension)         |       Latex-based        | Any document with tables (PDF output) |
-|                     Shaded and Framed blocks                    |   HTML and Latex-based   |           lab_assignment1.md          |
-|    [Exercise delimiter and auto-numbering  (`### {.exercise}`)   |           All            |       exercises_file_systems.md       |
-|                         [Multiple columns                        |  HTML, Latex and Docx*   |  Slides and exercises_file_systems.md |
-|                            [Pagebreaks                           |   HTML, Latex and Docx   |           `## {.pagebreak}`           |
-|              [Custom spans (underline, alert, color)             |  HTML, Latex and Docx*   |                 Slides                |
-|              [Filter out notes (no syntax extension)             |           All            |       None (cleaning up feature)      |
-|         [Custom (Latex-style) fontsizes in Divs and Spans        |   HTML and Latex-based   |     Slides and lab_assignment1.md     |
-|           [Block alignment syntax (center, left, right)          |   HTML and Latex-based   |  Slides and exercises_file_systems.md |
-| [Advanced beamer blocks (console, exampleblock, alertblock, ...) |          Beamer          |                 Slides                |
-|                        [Beamer transitions                       |          Beamer          |  None (Use spans with attribute only) |
-
--->
-
-
-## Multiformat images {#multiformat .unnumbered}     
+## Multiformat images     
 
 Pandoc allows the creation of multiple output documents from a single Markdown source file. If such a source file includes images, we must guarantee that the image format is suitable for the output format. For example, if we want to generate HTML from Markdown, only SVG, jpeg or png figures are allowed. By contrast, PDF figures are more suitable when generating Docx o PDF (Latex-based) output. Unfortunately, Pandoc's Markdown lacks support for specifying multiple figure formats in the sources. This is in order to generate several types of output documents from the same Markdown document. 
 
@@ -310,7 +290,7 @@ To illustrate how this extension works, let us consider the following example. S
 ![](img/structure.tex){alt-ext=html/.png,docx/.pdf align=center}\
 ```           
 
-## Latex blocks including Markdown {#latex-blocks .unnumbered}     
+## Latex blocks including Markdown  
 
 Pandoc's Markdown allows the user to include LaTeX blocks enclosed in between `\begin{..}` and `\end{...}`. When generating a non-LaTeX based output, such as docx or HTML, these blocks are just removed from the document so that they do not appear in the output file. By contrast, for  LaTeX based output (e.g. PDF, Beamer, etc.) Pandoc dumps these LaTeX blocks directly onto the output document without further processing, so that they are handled by the LaTeX engine. That leads to an important limitation: it is not possible to add Markdown code inside `\begin{..}-\end{...}` blocks, as it will be treated as LaTeX code. [Several solutions](https://github.com/jgm/pandoc/issues/2453) have been proposed to address this issue via special LaTeX macros, but they all pose different shortcomings.
 
@@ -329,14 +309,14 @@ As an interesting application of this Markdown extension, the following text sni
 ```
 
 
-## Traditional Latex tables (no syntax extension) {#latex-tables .unnumbered}     
+## Traditional Latex tables (no syntax extension)   
 
 This extension (enabled by default) just affects the way that tables are rendered in Latex-based or HTML based formats. It just takes care of displaying all tables as in a grid-like style: rows and columns are separated by horizontal and vertical rules. This stands in contrast with the default table-rendering style used by pandoc, which is [not always the most suitable choice](https://github.com/jgm/pandoc/issues/922). 
 
 
 
         
-## Shaded and Framed blocks {#shaded-framed  .unnumbered}     
+## Shaded and Framed blocks   
 
 This extension enables the user to define a shaded or a framed block of text in Markdown, by using the a generic block element with the *shaded* or *framed* class respectively.
 
@@ -364,7 +344,7 @@ d. Sevilla
 ```
 
                  
-## Exercise delimiter and auto-numbering {#exercises .unnumbered}     
+## Exercise delimiter and auto-numbering    
 
 <!-- **COMENTARIOS**: Se me ocurre que sería interesante poder incluir un texto antes del número de ejercicio o cuestión.-->
 
@@ -424,7 +404,7 @@ where `<Label>` can be any string. The first time that a particular label is use
 We should highlight that using the "`#`" symbol to create and increment custom counters was inspired by the syntax of the [pandoc-numbering filter](https://github.com/chdemko/pandoc-numbering), which provides a wider range of numbering formats.  
 
              
-## Multiple columns {#columns  .unnumbered}     
+## Multiple columns   
 
 <!--
 TODO (See `exercises_file_systems.md:168`)
@@ -488,7 +468,7 @@ The main sport practised in India is cricket
 - Teaching Markdown supports columns in regular LaTeX too via `minipage`
                   
 
-## Pagebreaks {#pagebreaks  .unnumbered}     
+## Pagebreaks    
 
 Teaching Markdown allows the user to add pagebreaks in a document by using the following text snippet:
 
@@ -497,7 +477,7 @@ Teaching Markdown allows the user to add pagebreaks in a document by using the f
 ```
 
 
-## Custom spans (underline, alert, color) {#custom-spans .unnumbered}    
+## Custom spans (underline, alert, color)  
 
 <!--
 
@@ -526,7 +506,7 @@ The computer can be divided into three main parts, according to [Von Neumann]{.a
 
 
               
-## Custom (Latex-style) fontsizes in Divs and Spans {#fontsize .unnumbered}     
+## Custom (Latex-style) fontsizes in Divs and Spans
 
 <!--TODO
 
@@ -562,7 +542,7 @@ In this Section we will introduce the main concepts of the C programming languag
 ```
 
          
-## Block and figure alignment syntax {#alignment .unnumbered}     
+## Block and figure alignment syntax    
 
 This extension allows the user to specify the alignment of a text snippet enclosed in a div block, by using the *align* attribute. The text snippet can be left aligned, centered or right aligned. 
 
@@ -595,7 +575,7 @@ Madrid, 2017.
 
 Note also that Teaching Markdown allows the *align* attribute to be used in figures as well.
 
-## Advanced beamer blocks {#beamer-blocks .unnumbered}     
+## Advanced beamer blocks   
 
 The `beamer` package allows the creation of slides in LaTeX. A very useful feature of this package is the fact that it allows the user to include blocks in each slide. Beamer blocks are just little slides that may be included within another beamer slide (aka frame).
 
@@ -618,7 +598,7 @@ where `[title]` encodes the title of the beamer block (two languages can be used
 * `console`, to add beamer blocks that emulate a terminal window (for the inclusion of examples with commands).
 
                    
-## Beamer transitions {#beamer-transitions .unnumbered}     
+## Beamer transitions     
 
 The beamer LaTeX package allows the inclusion of simple animations in slides. For example, the `\pause` command allows us to reveal parts of the frame one after another. In a similar vein, the `\only<n>{text}` makes it possible to indicate at what step (`n`) of the rendering process of a slide a given text snippet will become visible. 
 
