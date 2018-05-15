@@ -30,6 +30,6 @@ The Dual Markdown framework relies on free multi-platform tools available for Wi
 3. **[Panbuild plugin for Sublime Text](https://github.com/jcsaezal/SublimeText-Panbuild)**: This plugin makes it possible to use Panbuild seamlessly within the Sublime Text editor. <!--Essentially, the plugin removes the need to type panbuild or pandoc commands from a terminal window; all the interaction with panbuild and pandoc takes place from the graphical user interface of Sublime Text.-->
 
 Note that the installation instructions for each component can be found on the associated GitHub repository page:
-- [Installation of Dual Markdown filters](https://github.com/jcsaezal/panbuild/blob/master/README.md)
+- [Installation of Dual Markdown filters](https://github.com/dualmarkdown/dualmarkdown/blob/master/README.md)
 - [Installation of Panbuild](https://github.com/jcsaezal/panbuild/blob/master/README.md)
 - [Installation Panbuild plugin](https://github.com/jcsaezal/SublimeText-Panbuild/blob/master/README.md)
