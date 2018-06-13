@@ -10,9 +10,9 @@ sitemap:
 
 # Getting Started
 
-After installing the Dual Markdown Framework (check out the [Installation instructions](./installation) for details) you may now begin to create Dual Markdown documents and transform them into a variety of output documents (PDF, docx, HTML, EPUB, etc.).
+After installing the Dual Markdown Framework (check out the [Installation instructions](./installation)) you may now begin to create Dual Markdown documents and transform them into a variety of output documents (PDF, docx, HTML, EPUB, etc.).
 
-Two tutorials can be found below. The first one describes how to use and build the Dual Markdown sample documents [available on Github](https://github.com/dualmarkdown/examples). The second tutorial explains how to create a Dual markdown document from scratch and what to do to transform it into any of the available output formats. 
+Two tutorials can be found below. The first one describes how to use and build the Dual Markdown sample documents [available on Github](https://github.com/dualmarkdown/examples). The second tutorial explains how to create a Dual markdown document from scratch, and what to do to transform it into any of the available output formats. 
 
 ## How to use and build the examples
 
@@ -22,7 +22,7 @@ To illustrate the basics and the potential of the Dual Markdown Framework we cre
 * `build.yaml`: file with the build rules that will be used by [Panbuild](https://github.com/jcsaezal/panbuild), a key component of our framework. Panbuild makes it easier to automatically generate the various output documents with pandoc from dual markdown files. It can be used from the [Sublime Text](https://www.sublimetext.com/) editor— thanks to the [Panbuild plugin](https://github.com/jcsaezal/SublimeText-Panbuild)— as well as via the command line.
 * Markdown files with the source code of the example
 
-To illustrate how to build an example, we will use the one found in the _hello_ folder.
+To illustrate how to build any of the examples, we will use the one found in the _hello_ folder.
 
 ### Working with Sublime Text
 
@@ -55,7 +55,7 @@ You can also transform your document into the different output formats from the 
 
 
 ​			
-​## How to create and build a Dual Markdown document from scratch
+## How to create and build a Dual Markdown document from scratch
 
 TODO		
 ​	
