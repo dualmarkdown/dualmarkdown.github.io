@@ -55,8 +55,7 @@ You can also transform your document into the different output formats from the 
 
 
 ​			
-## How to create and build a Dual Markdown document from scratch
+## How to create and build a Dual Markdown document from scratch with Sublime Text
 
-TODO		
-​	
+<iframe align="center" src="https://drive.google.com/file/d/1LvpwrrOkcoyTZVpLV56MlLEgHN8IrPWg/preview" height="508" width="900"></iframe>​	
 
