@@ -58,6 +58,6 @@ You can also transform your document into the different output formats from the 
 ## How to create and build a Dual Markdown document from scratch with Sublime Text
 
 <div class="resp-container">
-<iframe class="resp-iframe" align="center" src="https://drive.google.com/file/d/1LvpwrrOkcoyTZVpLV56MlLEgHN8IrPWg/preview" height="1194.7" width="471.21"></iframe>​
+<iframe class="resp-iframe" align="center" src="https://drive.google.com/file/d/1LvpwrrOkcoyTZVpLV56MlLEgHN8IrPWg/preview" width="1194.7" height="471.21"></iframe>​
 </div>
 
