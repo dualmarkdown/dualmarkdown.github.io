@@ -61,8 +61,3 @@ You can also transform your document into the different output formats from the 
 	<iframe class="resp-iframe" align="center" src="https://drive.google.com/file/d/1LvpwrrOkcoyTZVpLV56MlLEgHN8IrPWg/preview" gesture="media"  allow="encrypted-media" allowfullscreen></iframe>​
 </div>
 
-## Android test video from youtube source
-
-<div class="resp-container">
-	<iframe class="resp-iframe" align="center" src="https://www.youtube.com/embed/A0FZIwabctw" gesture="media"  allow="encrypted-media" allowfullscreen></iframe>​
-</div>
