@@ -26,4 +26,4 @@ sitemap:
 
 #### Acknowledgements 
 
-The development of Dual Markdown has been supported by the Complutense University of Madrid through a [INNOVA-Docentia research project](https://eprints.ucm.es/48265/).
+The development of Dual Markdown has been supported by the Complutense University of Madrid through a [INNOVA-Docencia research project](https://eprints.ucm.es/48265/).
