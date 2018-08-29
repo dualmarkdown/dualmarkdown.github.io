@@ -10,4 +10,4 @@ sitemap:
 
 ## Support
 
-If you experience any difficulties while using Panbuild, please do not hesitate to open an issue on github so that we can help.
+If you experience any difficulties while using Panbuild, please do not hesitate to open an [issue on github](https://github.com/dualmarkdown/dualmarkdown/issues) so that we can help.

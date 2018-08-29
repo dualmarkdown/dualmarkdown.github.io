@@ -7,6 +7,7 @@ sitemap:
     lastmod: 2017-11-02
     changefreq: weekly
 ---
+
 ## Project contributors
 
 * Juan Carlos Sáez
@@ -21,3 +22,8 @@ sitemap:
 * Francisco Igual
 * David Sánchez
 * Adrián García
+
+
+#### Acknowledgements 
+
+The development of Dual Markdown has been supported by the Complutense University of Madrid through a [INNOVA-Docentia research project](https://eprints.ucm.es/48265/).
